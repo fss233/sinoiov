@@ -20,9 +20,10 @@ from app01 import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
+    path('', views.login),
     path('books/', views.index),
     path('add/', views.add),
+    path('login/', views.login),
     re_path('delete/(\d+)/', views.delete),
     re_path('edit/(\d+)/', views.edit),
 ]

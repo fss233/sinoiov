@@ -89,3 +89,13 @@ def edit(request,edit_id):
 
         return redirect("/")
 
+
+def login(request):
+    if request.method == "GET":
+        return render(request,"login.html")
+    else:
+        if request.POST.get("user") == "fss" and request.POST.get("pwd") == "123":
+            return redirect("/books/")
+        else:
+            errlog = "LOGIN ERROR!!!"
+            return render(request,"login.html",{"errlog":errlog})
