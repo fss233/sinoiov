@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <form action="http://127.0.0.1:8000/edit/{{ book_edit.nid }}/" method="post">
+              <div class="form-group">
+                <label for="title">书籍名称</label>
+                <input type="text" class="form-control" id="title" value={{ book_edit.title }} name="title">
+              </div>
+
+              <div class="form-group">
+                <label for="nid">ID</label>
+                <input type="text" class="form-control" id="nid" value={{ book_edit.nid }} name="nid">
+              </div>
+
+              <div class="form-group">
+                <label for="price">价格</label>
+                <input type="text" class="form-control" id="price" value={{ book_edit.price }} name="price">
+              </div>
+
+               <div class="form-group">
+                <label for="publish">出版社</label>
+                <input type="text" class="form-control" id="publish" value={{ book_edit.publish }} name="publish">
+              </div>
+
+
+              <button type="submit" class="btn btn-success pull-right">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+{% block title %}
+修改书籍
+{% endblock %}
+
+{% block hi %}
+{{ block.super }}
+<h3>EDIT...</h3>
+{% endblock %}

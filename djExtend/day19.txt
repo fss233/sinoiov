@@ -1,0 +1,162 @@
+day19
+
+
+
+Djangio
+
+	MTV + 控制器
+ 
+ 
+ 
+Django命令
+
+django-admin  startproject  MySite
+
+结果:
+
+MySite 
+
+   MySite
+   
+      urls.py  (路由系统:路由和视图函数映射)
+	  settings.py (项目所有配置信息)
+	  
+	  
+   manage.py (与Django交互文件,入口文件)
+   Templates(存放html文件)
+   
+   
+   
+
+python manage.py startapp app01  (一个最少一个应用)
+python manage.py startapp app2  (一个最少一个应用)
+
+
+MySite 
+   app01
+       views.py  (存放视图函数)
+   app02
+       views.py  (存放视图函数)
+   MySite
+   
+      urls.py  (路由系统:路由和视图函数映射)
+	  settings.py (项目所有配置信息)
+	  
+	  
+   manage.py (与Django交互文件,入口文件)
+   Templates(存放html文件)
+   
+
+
+python manage.py runserver  IP  PORT  (启动django项目)
+
+
+
+
+
+向服务器发送请求的方式:
+
+1 地址栏发请求   get请求
+2 form表单       get/post请求
+3 超链接a标签    get      <a href=""></a>
+
+4 ajax请求
+
+
+
+
+DAY19
+
+
+ MTV + url控制器
+ 中间件 分页 cookie session ajax CBV/DRF
+
+
+  
+
+一 url路由系统
+  
+  
+  
+  url:  http://ip:端口/a/b/c/?a=1&b=2
+
+  
+  
+  path()  完全匹配
+  re_path() 正则匹配         re.search("规则","待匹配字符串")---> re.search("re_path","url路径部分")
+  分组(正则)   # 按位置传参
+  有名分组 (?P<name>正则) # 按关键字传参
+  路由分发  include()
+
+二 视图函数(views.py)
+
+
+    def foo(request):
+	    
+		
+		return HttpResponse("响应体")
+
+
+    请求对象:
+	        print(request.method) # 请求方式  GET/POST
+			print(request.path)  #   /
+			print(request.get_full_path()) # /?a=1
+			print(request.GET)  # get请求数据  <QueryDict: {'a': ['1'], 'b': ['2']}>
+			print(request.POST) # post数据    <QueryDict: {}>
+			print(request.GET.get("a"))  # 1
+			print(request.body)   # 请求体数据 b''
+			print(request.is_ajax())  # False
+			print(request.headers)
+			print(request.headers.get("User-Agent"))
+
+
+	响应体 
+		
+		HttpResponse(响应体)
+
+
+
+		render方法:
+		   (1) 按settinghs里配置的templates的路径查找html页面
+		   (2) 渲染模板  {{}} 变量替换,
+		   (3) 将替换完后的html页面放到HttpResponse返回浏览器
+		
+		
+		redirect(重定向)
+	
+	
+
+
+三 模板语法
+
+	变量渲染
+	
+	   {{}}
+	       (1) 句点符号:深度查询
+		   (2) 过滤器
+	   
+	标签渲染   
+	
+	   {%%}
+	   
+   
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 

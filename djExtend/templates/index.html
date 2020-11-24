@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class="t1">
+                <a href="http://127.0.0.1:8000/add/" class="btn btn-primary">添加书籍</a>
+                <div class="row">
+                    <div class="col-md-offset-2">
+                          <table class="table table-striped  table-bordered">
+                        <thead>
+                           <tr>
+                               <th>序号</th>
+                               <th>书籍名称</th>
+                               <th>价格</th>
+                               <th>出版社</th>
+                               <th>RowKey</th>
+                               <th>操作</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                            {% for book in books %}
+
+                                     <tr>
+                                         <td>{{ forloop.counter }}</td>
+                                         <td>{{ book.title }}</td>
+                                         <td>{{ book.price }}</td>
+                                         <td>{{ book.publish }}</td>
+                                         <td>{{ book.nid }}</td>
+                                         <td>
+                                             <a href="http://127.0.0.1:8000/delete/{{ book.nid }}/">删除</a>
+                                             <a href="http://127.0.0.1:8000/edit/{{ book.nid }}/">编辑</a>
+                                         </td>
+                                     </tr>
+
+                            {% endfor %}
+
+                        </tbody>
+                  </table>
+                    </div>
+                </div>
+          </div>
+
+{% endblock %}
+
+{% block title %}
+首页
+{% endblock %}
+
+
+{% block hi %}
+{{ block.super }}
+<h3>hi body.</h3>
+{% endblock %}
+
+<script>
+    //nid = 0 ,隐藏
+
+</script>
