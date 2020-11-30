@@ -13,7 +13,7 @@
                                <th>书籍名称</th>
                                <th>价格</th>
                                <th>出版社</th>
-                               <th>RowKey</th>
+                               <th>初版日期</th>
                                <th>操作</th>
                            </tr>
                         </thead>
@@ -25,10 +25,10 @@
                                          <td>{{ book.title }}</td>
                                          <td>{{ book.price }}</td>
                                          <td>{{ book.publish }}</td>
-                                         <td>{{ book.nid }}</td>
+                                         <td>{{ book.pub_date|date:'Y-m-d' }}</td>
                                          <td>
-                                             <a href="http://127.0.0.1:8899/delete/{{ book.nid }}/">删除</a>
-                                             <a href="http://127.0.0.1:8899/edit/{{ book.nid }}/">编辑</a>
+                                             <a href="http://127.0.0.1:8899/delete/{{ book.id }}/">删除</a>
+                                             <a href="http://127.0.0.1:8899/edit/{{ book.id }}/">编辑</a>
                                          </td>
                                      </tr>
 

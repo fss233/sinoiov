@@ -4,15 +4,15 @@
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <form action="http://127.0.0.1:8899/edit/{{ book_edit.nid }}/" method="post">
+            <form action="http://127.0.0.1:8899/edit/{{ book_edit.id }}/" method="post">
               <div class="form-group">
                 <label for="title">书籍名称</label>
                 <input type="text" class="form-control" id="title" value={{ book_edit.title }} name="title">
               </div>
 
               <div class="form-group">
-                <label for="nid">ID</label>
-                <input type="text" class="form-control" id="nid" value={{ book_edit.nid }} name="nid">
+                <label for="pub_date">ID</label>
+                <input type="date" class="form-control" id="pub_date" value={{ book_edit.pub_date|date:'Y-m-d' }} name="pub_date">
               </div>
 
               <div class="form-group">
