@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <form action="http://127.0.0.1:8899/add/" method="post">
+              <div class="form-group">
+                <label for="title">书籍名称</label>
+                <input type="text" class="form-control" id="title" placeholder="title" name="title">
+              </div>
+
+              <div class="form-group">
+                <label for="pub_date">ID</label>
+                <input type="date" class="form-control" id="pub_date" placeholder="pub_date" name="pub_date">
+              </div>
+
+              <div class="form-group">
+                <label for="price">价格</label>
+                <input type="text" class="form-control" id="price" placeholder="price" name="price">
+              </div>
+
+               <div class="form-group">
+                <label for="publish">出版社编号</label>
+                <input type="text" class="form-control" id="publish" placeholder="publisher_id" name="publisher_id">
+              </div>
+
+
+              <button type="submit" class="btn btn-success pull-right">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+{% block title %}
+添加书籍
+{% endblock %}
+
+{% block hi %}
+{{ block.super }}
+<h3>ADD...</h3>
+{% endblock %}

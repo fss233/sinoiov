@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+          title
+        {% endblock %}
+    </title>
+
+    <style>
+        .header{
+            width: 100%;
+            height: 60px;
+            background-color: pink;
+        }
+
+        .left{
+            /* border: solid red 1px; */
+            height:750px
+        }
+
+        .right{
+            /*background-color: lightgray;*/
+             height:750px;
+
+
+        }
+
+        .title{
+            font-size: 27px;
+            color: #e43eff;
+            text-align: center;
+            margin: auto;
+
+        }
+
+        .t1{
+            margin-top: 10px;
+        }
+        a:link,a:visited{
+            text-decoration:none;  /*超链接无下划线*/
+        }
+
+        .fudong{
+            float: left;
+        }
+
+    </style>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="container-fluid">
+
+    <div class="header">
+        <a class="title" href="http://127.0.0.1:8899/">图书管理系统</a>
+    </div>
+
+    <div class="content row">
+
+        <div class="left col-md-2">
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <h3 class="panel-title">图书分类</h3>
+              </div>
+              <div class="panel-body">
+                走进科学
+              </div>
+            </div>
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <h3 class="panel-title">出版社信息</h3>
+              </div>
+              <div class="panel-body">
+                修改出版社
+              </div>
+            </div>
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h3 class="panel-title">作者信息</h3>
+              </div>
+              <div class="panel-body">
+                修改作者
+              </div>
+            </div>
+        </div>
+
+        <div class="right col-md-9">
+                {% block hi %}
+                 <h3>欢迎来到图书管理系统</h3>
+                {% endblock hi %}
+
+                {% block content %}
+              
+                {% endblock content %}
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+</script>
+</body>
+</html>
