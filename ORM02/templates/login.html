@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <form action="http://127.0.0.1:8899/login/" method="post">
+              <div class="form-group">
+                <label for="user">用户名:</label>
+                <input type="user" class="form-control" id="user" placeholder="user" name="user">
+              </div>
+
+                <div class="form-group">
+                <label for="pwd">密码:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="pwd" name="pwd">
+              </div>
+
+
+              <button type="submit" class="btn btn-success pull-right">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="errors">
+    {{ errlog }}
+    </div>
+
+
+{% endblock %}
+
+
+{% block title %}
+login
+{% endblock %}
+
+{% block hi %}
+{{ block.super }}
+<h3>login...</h3>
+{% endblock %}
